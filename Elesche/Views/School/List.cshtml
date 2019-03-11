@@ -1,0 +1,19 @@
+﻿@model IEnumerable<School>
+@foreach (var school in Model)
+{
+<div>
+    <h1>Name: @school.Name</h1>
+    <h2>Director: @school.Director</h2>
+    <h2>ID: @school.Id</h2>
+    <div class="btn btn-info ">@Html.ActionLink("Edit", "Edit", new { id = school.Id }) </div>
+    <div class="btn btn-warning">@Html.ActionLink("Delete", "Delete", new { id = school.Id })</div>
+    <div class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = school.Id })</div>
+</div>
+
+}
+<div class="text-center">
+    <div class="btn btn-success ">
+        @Html.ActionLink("Create", "Create")
+</div>
+</div>
+

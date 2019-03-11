@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Equipment>
+@foreach (var equipment in Model)
+{
+    <div>
+        <h1>Name: @equipment.Name</h1>
+        <h2>School: @equipment.School.Name</h2>
+        <h2>ID: @equipment.Id</h2>
+        <div class="btn btn-info ">@Html.ActionLink("Edit", "Edit", new { id = equipment.Id }) </div>
+        <div class="btn btn-warning">@Html.ActionLink("Delete", "Delete", new { id = equipment.Id })</div>
+        <div class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = equipment.Id })</div>
+    </div>
+   
+}
+<div class="text-center">
+    <div class="btn btn-info">
+        <a asp-controller="School" asp-action="Details" asp-route-id="@Model.FirstOrDefault()?.SchoolId">Back to Details</a>
+    </div>
+    <div class="btn btn-success ">
+        @Html.ActionLink("Create", "Create", new { id = Model.FirstOrDefault()?.SchoolId })
+        
+    </div>
+</div>
+
