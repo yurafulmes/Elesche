@@ -4,6 +4,7 @@ using Elesche.Models.SchoolModel;
 using Elesche.Models.SubjectModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +19,7 @@ namespace Elesche.Controllers
         private IGenericRepository<Subject> subjectRepository;
         private IGenericRepository<Equipment> equipmentrepository;
         private IGenericRepository<School> schoolRepository;
+
         public SubjectController(IGenericRepository<Subject> subjectRepository,IGenericRepository<Equipment> equipmentrepository,
             IGenericRepository<School> schoolRepository)
         {
@@ -53,6 +55,7 @@ namespace Elesche.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    System.Diagnostics.Debug.WriteLine("\n\n\n\n SUBJECT ID: "+subject.SchoolId);
                     subjectRepository.Add(subject);
                     await subjectRepository.SaveAsync();
                     return RedirectToAction("List");
@@ -87,6 +90,33 @@ namespace Elesche.Controllers
             subjectRepository.Delete(item);
             await subjectRepository.SaveAsync();
             return RedirectToAction("List", new { id = item.SchoolId });
+        }
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return View(HttpStatusCode.BadRequest);
+            }
+            var item = subjectRepository.GetSingle(i => i.Id == id);
+            ViewBag.School = new SelectList(schoolRepository.Items, "Id", "Name");
+            if (item == null)
+            {
+                return View(HttpStatusCode.NotFound);
+            }
+            return View(item);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(include: "Id,Name,Class,Semester,HoursPerWeek,SchoolId")]Subject subject)
+        {
+            if (ModelState.IsValid)
+            {
+                var item = subjectRepository.GetSingle(i => i.Id == subject.Id, s => s.School);
+                subjectRepository.Update(subject);
+                await subjectRepository.SaveAsync();
+                return RedirectToAction("List", new { id=item.School.Id});
+            }
+            return View(subject);
         }
     }
 }

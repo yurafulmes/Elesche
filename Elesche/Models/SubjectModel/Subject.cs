@@ -15,9 +15,13 @@ namespace Elesche.Models.SubjectModel
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// The enum of school year
+        /// The n-th class
         /// </summary>
-        public SchoolYearOfHightSchool SchoolYearOfHightSchool { get; set; }
+        public int Class { get; set; }
+        /// <summary>
+        /// The enum of semester
+        /// </summary>
+        public int Semester { get; set; }
         /// <summary>
         /// How much time is needed for the subject
         /// </summary>
@@ -27,7 +31,7 @@ namespace Elesche.Models.SubjectModel
         /// </summary>
         public List<Equipment> Equipments { get; set; }
         public int SchoolId { get; set; }
-        public School School { get; set; }
+        public virtual School School { get; set; }
     }
 }
 

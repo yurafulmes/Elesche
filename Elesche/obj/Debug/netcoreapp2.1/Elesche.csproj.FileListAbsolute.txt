@@ -32,3 +32,7 @@ E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\School\Detail
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Equipment\Create.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Equipment\List.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Equipment\Delete.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Create.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Delete.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\List.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Edit.g.cshtml.cs

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Subject>
+@foreach (var subject in Model)
+{
+    <div>
+        <h1>Name: @subject.Name</h1>
+        <h2>School: @subject.School.Name</h2>
+        <h2>ID: @subject.Id</h2>
+        <div class="btn btn-info ">@Html.ActionLink("Edit", "Edit", new { id = subject.Id }) </div>
+        <div class="btn btn-warning">@Html.ActionLink("Delete", "Delete", new { id = subject.Id })</div>
+        <div class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = subject.Id })</div>
+    </div>
+
+}
+<div class="text-center">
+    <div class="btn btn-info">
+        <a asp-controller="School" asp-action="Details" asp-route-id="@Model.FirstOrDefault()?.SchoolId">Back to Details</a>
+    </div>
+    <div class="btn btn-success ">
+        @Html.ActionLink("Create", "Create", new { id = Model.FirstOrDefault()?.SchoolId })
+
+    </div>
+</div>

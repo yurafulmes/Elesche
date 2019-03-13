@@ -23,8 +23,13 @@ using Elesche.Models.EquipmentModel;
 
 #line default
 #line hidden
+#line 3 "E:\Asp.Net.MVC\Elesche\Elesche\Views\_ViewImports.cshtml"
+using Elesche.Models.SubjectModel;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4e112166fb3ac72de84602fef065dbd3b6f96c12", @"/Views/School/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9f3b827fb3e2921bf1a568d0d76d3f82a5b718cc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e408cd0761eabeefbdec540162212d486dcf947", @"/Views/_ViewImports.cshtml")]
     public class Views_School_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Elesche.Models.SchoolModel.School>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Equipment", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -133,7 +138,7 @@ using Elesche.Models.EquipmentModel;
             WriteLiteral("        <dd>\r\n            ");
             EndContext();
             BeginContext(702, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d7c8045908d49c988db7af53b47c425", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "059ffc590e434b19ac5681f070f3640e", async() => {
                 BeginContext(775, 4, true);
                 WriteLiteral("List");
                 EndContext();
@@ -170,7 +175,7 @@ using Elesche.Models.EquipmentModel;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(830, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc650ed48b3c4032add60eb416fe0043", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c20544c4dd004cd38131310eb2e87a10", async() => {
                 BeginContext(876, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -205,7 +210,7 @@ using Elesche.Models.EquipmentModel;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(892, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e5a116fd44040c8916b814006e3817d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7608a693e39420881851569d815b49a", async() => {
                 BeginContext(913, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

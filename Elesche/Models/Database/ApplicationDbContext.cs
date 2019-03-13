@@ -1,5 +1,6 @@
 ﻿using Elesche.Models.EquipmentModel;
 using Elesche.Models.SchoolModel;
+using Elesche.Models.SubjectModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Elesche.Models
         /// </summary>
         public DbSet<School> Schools { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             //Configuration.LazyLoadingEnabled = false;
