@@ -29,7 +29,7 @@ namespace Elesche.Models.SubjectModel
         /// <summary>
         /// The equipments that are needed for subject
         /// </summary>
-        public List<Equipment> Equipments { get; set; }
+        public virtual IEnumerable<SubjectEquipment> SubjectsEquipments { get; set; }
         public int SchoolId { get; set; }
         public virtual School School { get; set; }
     }
