@@ -1,4 +1,4 @@
-﻿@model Elesche.Models.SubjectModel.Subject
+﻿@model Elesche.ViewModels.SubjectEquipmentsViewModel
 
 <h4>Subject</h4>
 <hr />
@@ -6,30 +6,37 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Subject.Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Subject.Name" class="control-label"></label>
+                <input asp-for="Subject.Name" class="form-control" />
+                <span asp-validation-for="Subject.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Class" class="control-label"></label>
-                <input asp-for="Class" class="form-control" />
-                <span asp-validation-for="Class" class="text-danger"></span>
+                <label asp-for="Subject.Class" class="control-label"></label>
+                <input asp-for="Subject.Class" class="form-control" />
+                <span asp-validation-for="Subject.Class" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Semester" class="control-label"></label>
-                <input asp-for="Semester" class="form-control" />
-                <span asp-validation-for="Semester" class="text-danger"></span>
+                <label asp-for="Subject.Semester" class="control-label"></label>
+                <input asp-for="Subject.Semester" class="form-control" />
+                <span asp-validation-for="Subject.Semester" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HoursPerWeek" class="control-label"></label>
-                <input asp-for="HoursPerWeek" class="form-control" />
-                <span asp-validation-for="HoursPerWeek" class="text-danger"></span>
+                <label asp-for="Subject.HoursPerWeek" class="control-label"></label>
+                <input asp-for="Subject.HoursPerWeek" class="form-control" />
+                <span asp-validation-for="Subject.HoursPerWeek" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="School" class="control-label"></label>
-                <select asp-for="SchoolId" class="form-control" asp-items="ViewBag.School"></select>
+                <label asp-for="Subject.School" class="control-label"></label>
+                <select asp-for="Subject.SchoolId" class="form-control" asp-items="ViewBag.School"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.Equipment" class="control-label"></label>
+                <select asp-for="Subject.EquipmentId" class="form-control" asp-items="@Model.Equipments">
+                    <option selected="selected" disabled="disabled">Choose the Equipment</option>
+                    <option selected="selected" value="0">None</option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -39,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="List" asp-route-id="@Model.SchoolId">Back to List</a>
+    <a asp-action="List" asp-route-id="@Model.Subject.SchoolId">Back to List</a>
 </div>
 
 @section Scripts {

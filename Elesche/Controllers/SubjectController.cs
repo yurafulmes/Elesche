@@ -11,6 +11,8 @@ using System.Data;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Elesche.ViewModels;
+using Elesche.Models;
 
 namespace Elesche.Controllers
 {
@@ -36,20 +38,34 @@ namespace Elesche.Controllers
 
             }
             var subjects = all.Where(i => i.SchoolId == id);
+            ViewBag.SchoolId = id;
             return View(subjects);
         }
+        public ActionResult Details(int? id)
+        {
 
+            if (id == null)
+            {
+                return View(HttpStatusCode.BadRequest);
+            }
+            var subjects = subjectRepository.GetSingle(i => i.Id == id,s=>s.School);
+            if (subjects == null)
+            {
+                return View(HttpStatusCode.NotFound);
+            }
+            return View(subjects);
+        }
         [HttpGet]
         public ActionResult Create(int? id)
         {
-            ViewBag.School = new SelectList(schoolRepository.Items, "Id", "Name", id);
+            ViewBag.School = new SelectList(schoolRepository.Items, "Id", "Name",id);
             ViewBag.SchoolId = id;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(
-           Subject subject)
+            [Bind(include: "Name,Class,Semester,HoursPerWeek,SchoolId")]Subject subject)
         {
             try
             {
@@ -58,7 +74,7 @@ namespace Elesche.Controllers
                     System.Diagnostics.Debug.WriteLine("\n\n\n\n SUBJECT ID: "+subject.SchoolId);
                     subjectRepository.Add(subject);
                     await subjectRepository.SaveAsync();
-                    return RedirectToAction("List");
+                    return RedirectToAction("List",new { id=subject.SchoolId});
                 }
             }
             catch (DataException /* dex */)
@@ -97,26 +113,39 @@ namespace Elesche.Controllers
             {
                 return View(HttpStatusCode.BadRequest);
             }
-            var item = subjectRepository.GetSingle(i => i.Id == id);
-            ViewBag.School = new SelectList(schoolRepository.Items, "Id", "Name");
+            var item = subjectRepository.GetSingle(i => i.Id == id,e=>e.Equipment,s=>s.School);
+            ViewBag.School = new SelectList(schoolRepository.Items, "Id", "Name",item.School.Id);
             if (item == null)
             {
                 return View(HttpStatusCode.NotFound);
             }
-            return View(item);
+            var subjectEquipmentsViewModel = new SubjectEquipmentsViewModel
+            {
+                Subject=item,
+                Equipments = equipmentrepository.Items.Where(s=>s.SchoolId==item.School.Id)
+                .Select(o => new SelectListItem
+                {
+                    Text = o.Name,
+                    Value = o.Id.ToString()
+                })
+            };
+            return View(subjectEquipmentsViewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(include: "Id,Name,Class,Semester,HoursPerWeek,SchoolId")]Subject subject)
+        public async Task<ActionResult> Edit(SubjectEquipmentsViewModel subjectEquipmentsViewModel)
         {
             if (ModelState.IsValid)
             {
-                var item = subjectRepository.GetSingle(i => i.Id == subject.Id, s => s.School);
-                subjectRepository.Update(subject);
+                var item = subjectRepository.GetSingle(i => i.Id == subjectEquipmentsViewModel.Subject.Id,e=>e.Equipment, s => s.School);
+
+                if (equipmentrepository.Items.FirstOrDefault(i => i.Id == subjectEquipmentsViewModel.Subject.EquipmentId) == null)
+                    subjectEquipmentsViewModel.Subject.EquipmentId = null;
+                subjectRepository.Update(subjectEquipmentsViewModel.Subject);
                 await subjectRepository.SaveAsync();
                 return RedirectToAction("List", new { id=item.School.Id});
             }
-            return View(subject);
+            return View(subjectEquipmentsViewModel.Subject);
         }
     }
 }

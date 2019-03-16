@@ -2,6 +2,8 @@ using Elesche.Models.EquipmentModel;
 using Elesche.Models.SchoolModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace Elesche.Models.SubjectModel
 {
     public class Subject
@@ -29,7 +31,8 @@ namespace Elesche.Models.SubjectModel
         /// <summary>
         /// The equipments that are needed for subject
         /// </summary>
-        public virtual IEnumerable<SubjectEquipment> SubjectsEquipments { get; set; }
+        public virtual Equipment Equipment{ get; set; }
+        public int? EquipmentId { get; set; }
         public int SchoolId { get; set; }
         public virtual School School { get; set; }
     }

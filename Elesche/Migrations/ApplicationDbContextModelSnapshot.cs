@@ -29,13 +29,9 @@ namespace Elesche.Migrations
 
                     b.Property<int>("SchoolId");
 
-                    b.Property<int?>("SubjectId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("SchoolId");
-
-                    b.HasIndex("SubjectId");
 
                     b.ToTable("Equipments");
                 });
@@ -63,6 +59,8 @@ namespace Elesche.Migrations
 
                     b.Property<int>("Class");
 
+                    b.Property<int?>("EquipmentId");
+
                     b.Property<int>("HoursPerWeek");
 
                     b.Property<string>("Name");
@@ -72,6 +70,8 @@ namespace Elesche.Migrations
                     b.Property<int>("Semester");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EquipmentId");
 
                     b.HasIndex("SchoolId");
 
@@ -84,16 +84,16 @@ namespace Elesche.Migrations
                         .WithMany("Equipments")
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Elesche.Models.SubjectModel.Subject")
-                        .WithMany("Equipments")
-                        .HasForeignKey("SubjectId");
                 });
 
             modelBuilder.Entity("Elesche.Models.SubjectModel.Subject", b =>
                 {
+                    b.HasOne("Elesche.Models.EquipmentModel.Equipment", "Equipment")
+                        .WithMany("Subjects")
+                        .HasForeignKey("EquipmentId");
+
                     b.HasOne("Elesche.Models.SchoolModel.School", "School")
-                        .WithMany()
+                        .WithMany("Subjects")
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

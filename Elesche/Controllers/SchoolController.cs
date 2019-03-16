@@ -32,7 +32,7 @@ namespace Elesche.Controllers
             {
                 return View(HttpStatusCode.BadRequest);
             }
-            School school = repository.GetSingle(i => i.Id==id,e=>e.Equipments);
+            School school = repository.GetSingle(i => i.Id==id,e=>e.Equipments,s=>s.Subjects);
             if (school == null)
             {
                 return View(HttpStatusCode.NotFound);

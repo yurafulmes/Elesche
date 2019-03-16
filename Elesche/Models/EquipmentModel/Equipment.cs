@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using Elesche.Models.SchoolModel;
+using Elesche.Models.SubjectModel;
 
 namespace Elesche.Models.EquipmentModel
 {
@@ -23,5 +24,6 @@ namespace Elesche.Models.EquipmentModel
         /// School object
         /// </summary>
         public virtual School School { get; set; }
+        public virtual IEnumerable<Subject> Subjects { get; set; }
     }
 }

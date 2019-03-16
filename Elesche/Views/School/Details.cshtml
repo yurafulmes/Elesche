@@ -22,11 +22,23 @@
         @foreach (var equip in Model.Equipments)
         {
             <dd>
-            @equip.Name
+                @equip.Name
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects)
+        </dt>
+        <dd>
+            <a asp-controller="Equipment" asp-action="List" asp-route-id="@Model.Id">List</a>
+        </dd>
+        @foreach (var equip in Model.Subjects)
+        {
+            <dd>
+                @equip.Name
             </dd>
         }
         <dd>
-            <a asp-controller="Equipment" asp-action="List" asp-route-id="@Model.Id">List</a>
+            <a asp-controller="Subject" asp-action="List" asp-route-id="@Model.Id">List</a>
         </dd>
     </dl>
 </div>

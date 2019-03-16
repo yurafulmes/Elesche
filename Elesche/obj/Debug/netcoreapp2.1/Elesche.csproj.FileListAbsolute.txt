@@ -2,7 +2,6 @@ E:\Asp.Net.MVC\Elesche\Elesche\bin\Debug\netcoreapp2.1\Elesche.deps.json
 E:\Asp.Net.MVC\Elesche\Elesche\bin\Debug\netcoreapp2.1\Elesche.runtimeconfig.json
 E:\Asp.Net.MVC\Elesche\Elesche\bin\Debug\netcoreapp2.1\Elesche.runtimeconfig.dev.json
 E:\Asp.Net.MVC\Elesche\Elesche\bin\Debug\netcoreapp2.1\Elesche.dll
-E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.csprojAssemblyReference.cache
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.csproj.CoreCompileInputs.cache
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.RazorAssemblyInfo.cache
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.RazorAssemblyInfo.cs
@@ -36,3 +35,5 @@ E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Creat
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Delete.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\List.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Edit.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Details.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.csprojAssemblyReference.cache

@@ -2,6 +2,7 @@
 using Elesche.Models.Database;
 using Elesche.Models.EquipmentModel;
 using Elesche.Models.SchoolModel;
+using Elesche.Models.SubjectModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -16,10 +17,13 @@ namespace Elesche.Controllers
     {
         private IGenericRepository<Equipment> repository;
         private IGenericRepository<School> repositorySchool;
-        public EquipmentController(IGenericRepository<Equipment> repository, IGenericRepository<School> repositorySchool)
+        private IGenericRepository<Subject> subjectRepository;
+        public EquipmentController(IGenericRepository<Equipment> repository, IGenericRepository<School> repositorySchool,
+            IGenericRepository<Subject> subjectRepository)
         {
             this.repository = repository;
             this.repositorySchool = repositorySchool;
+            this.subjectRepository = subjectRepository;
 
         }
 
@@ -32,10 +36,24 @@ namespace Elesche.Controllers
 
             }
             var equipments =all.Where(i => i.SchoolId == id);
+            ViewBag.SchoolId = id;
             System.Diagnostics.Debug.WriteLine(id);
             return View(equipments);
         }
-       
+        public ActionResult Details(int? id)
+        {
+
+            if (id == null)
+            {
+                return View(HttpStatusCode.BadRequest);
+            }
+            var equipment = repository.GetSingle(i => i.Id == id, s => s.School);
+            if (equipment == null)
+            {
+                return View(HttpStatusCode.NotFound);
+            }
+            return View(equipment);
+        }
         [HttpGet]
         public ActionResult Create(int? id)
         {
@@ -46,7 +64,7 @@ namespace Elesche.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(
-           Equipment equipment)
+           [Bind (include:"Name,SchoolId")]Equipment equipment)
         {
             try
             {
@@ -55,7 +73,7 @@ namespace Elesche.Controllers
                     System.Diagnostics.Debug.WriteLine(equipment.SchoolId);
                     repository.Add(equipment);
                     await repository.SaveAsync();
-                    return RedirectToAction("List");
+                    return RedirectToAction("List",new { id = equipment.SchoolId});
                 }
             }
             catch (DataException /* dex */)
@@ -83,10 +101,16 @@ namespace Elesche.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            var item = await repository.FindAsync(id);
-            repository.Delete(item);
+            var fkSetNull = repository.GetSingle(i => i.Id == id, s => s.Subjects);
+            foreach (var fk in fkSetNull.Subjects)
+            {
+                fk.EquipmentId = null;
+                subjectRepository.Update(fk);
+            }
+            repository.Delete(fkSetNull);
             await repository.SaveAsync();
-            return RedirectToAction("List",new { id=item.SchoolId});
+            await subjectRepository.SaveAsync();
+            return RedirectToAction("List",new { id= fkSetNull.SchoolId});
         }
     }
 }
