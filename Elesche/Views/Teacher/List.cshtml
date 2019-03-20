@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Teacher>
+@foreach (var teacher in Model)
+{
+<div>
+    <h1>Name: @teacher.FirstName</h1>
+    <h2>LastName: @teacher.LastName</h2>
+    <h2>Patronymic: @teacher.Patronymic</h2>
+    <h2>School: @teacher.School.Name</h2>
+    <h2>ID: @teacher.Id</h2>
+    <div class="btn btn-info ">@Html.ActionLink("Edit", "Edit", new { id = teacher.Id }) </div>
+    <div class="btn btn-warning">@Html.ActionLink("Delete", "Delete", new { id = teacher.Id })</div>
+    <div class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = teacher.Id })</div>
+</div>
+
+}
+<div class="text-center">
+    <div class="btn btn-info">
+        <a asp-controller="School" asp-action="Details" asp-route-id="@ViewBag.SchoolId">Back to Details</a>
+    </div>
+    <div class="btn btn-success ">
+        @Html.ActionLink("Create", "Create", new { id = ViewBag.SchoolId })
+
+    </div>
+</div>

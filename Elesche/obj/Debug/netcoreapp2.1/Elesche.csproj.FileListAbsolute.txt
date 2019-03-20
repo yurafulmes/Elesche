@@ -37,3 +37,6 @@ E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\List.
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Edit.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Subject\Details.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.csprojAssemblyReference.cache
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Equipment\Details.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\List.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\Create.g.cshtml.cs

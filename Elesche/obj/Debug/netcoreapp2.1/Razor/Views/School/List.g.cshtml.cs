@@ -28,8 +28,13 @@ using Elesche.Models.SubjectModel;
 
 #line default
 #line hidden
+#line 4 "E:\Asp.Net.MVC\Elesche\Elesche\Views\_ViewImports.cshtml"
+using Elesche.Models.TeacherModel;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"84b36fe480acfc4fc1076590a6cb38aeb303893a", @"/Views/School/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e408cd0761eabeefbdec540162212d486dcf947", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abdd123b3ba1d857bc0ade27744e95f5421a8026", @"/Views/_ViewImports.cshtml")]
     public class Views_School_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<School>>
     {
         #pragma warning disable 1998

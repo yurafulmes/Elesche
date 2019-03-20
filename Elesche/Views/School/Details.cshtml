@@ -25,20 +25,34 @@
                 @equip.Name
             </dd>
         }
-        <dt>
-            @Html.DisplayNameFor(model => model.Subjects)
-        </dt>
         <dd>
             <a asp-controller="Equipment" asp-action="List" asp-route-id="@Model.Id">List</a>
         </dd>
-        @foreach (var equip in Model.Subjects)
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects)
+        </dt>
+        @foreach (var subject in Model.Subjects)
         {
             <dd>
-                @equip.Name
+                @subject.Name
             </dd>
         }
         <dd>
             <a asp-controller="Subject" asp-action="List" asp-route-id="@Model.Id">List</a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Teachers)
+        </dt>
+        @foreach (var teacher in Model.Teachers)
+        {
+            <dd>
+                @(
+                    teacher.FirstName + " " + teacher.LastName + " " + teacher.Patronymic
+                )
+            </dd>
+        }
+        <dd>
+            <a asp-controller="Teacher" asp-action="List" asp-route-id="@Model.Id">List</a>
         </dd>
     </dl>
 </div>

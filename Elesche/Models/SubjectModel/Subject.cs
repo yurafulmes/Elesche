@@ -35,6 +35,7 @@ namespace Elesche.Models.SubjectModel
         public int? EquipmentId { get; set; }
         public int SchoolId { get; set; }
         public virtual School School { get; set; }
+        public virtual List<Subject> Teachers { get; set; }
     }
 }
 

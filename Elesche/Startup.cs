@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Elesche.Models.Database;
 using Elesche.Models.SchoolModel;
 using Elesche.Models.SubjectModel;
+using Elesche.Models.TeacherModel;
 
 namespace Elesche
 {
@@ -35,7 +36,9 @@ namespace Elesche
                 Configuration["Data:ElescheSchool:ConnectionString"]));
             services.AddScoped<IGenericRepository<School>, GenericRepository<School>>();
             services.AddScoped<IGenericRepository<Equipment>, GenericRepository<Equipment>>();
-            services.AddScoped<IGenericRepository<Subject>, GenericRepository<Subject>>();           
+            services.AddScoped<IGenericRepository<Subject>, GenericRepository<Subject>>();
+            services.AddScoped<IGenericRepository<Teacher>, GenericRepository<Teacher>>();
+            services.AddScoped<IGenericRepository<TeacherSubject>, GenericRepository<TeacherSubject>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

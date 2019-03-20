@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elesche.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190316172115_test")]
-    partial class test
+    [Migration("20190320101809_addTeacher")]
+    partial class addTeacher
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
