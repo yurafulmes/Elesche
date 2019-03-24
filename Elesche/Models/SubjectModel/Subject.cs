@@ -1,5 +1,7 @@
+using Elesche.Models.Database;
 using Elesche.Models.EquipmentModel;
 using Elesche.Models.SchoolModel;
+using Elesche.Models.TeacherModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,7 +37,7 @@ namespace Elesche.Models.SubjectModel
         public int? EquipmentId { get; set; }
         public int SchoolId { get; set; }
         public virtual School School { get; set; }
-        public virtual List<Subject> Teachers { get; set; }
+        public virtual List<TeacherSubject> TeacherSubjects { get; set; }
     }
 }
 

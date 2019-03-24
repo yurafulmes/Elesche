@@ -1,4 +1,5 @@
-﻿using Elesche.Models.SchoolModel;
+﻿using Elesche.Models.Database;
+using Elesche.Models.SchoolModel;
 using Elesche.Models.SubjectModel;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace Elesche.Models.TeacherModel
         public string Patronymic { get; set; }
         public int SchoolId { get; set; }
         public virtual School School { get; set; }
-        public virtual List<Subject> Subjects { get; set; }
-
+        public virtual List<TeacherSubject> TeacherSubjects { get; set; }
     }
 }

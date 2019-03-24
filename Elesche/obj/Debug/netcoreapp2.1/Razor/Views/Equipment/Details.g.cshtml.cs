@@ -33,8 +33,13 @@ using Elesche.Models.TeacherModel;
 
 #line default
 #line hidden
+#line 5 "E:\Asp.Net.MVC\Elesche\Elesche\Views\_ViewImports.cshtml"
+using Elesche.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3dd3c60e02cb2e0ece26cb29b6354fed875b2177", @"/Views/Equipment/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abdd123b3ba1d857bc0ade27744e95f5421a8026", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"35a91de7833b0b5dda87909e5137bf8b936879e1", @"/Views/_ViewImports.cshtml")]
     public class Views_Equipment_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Elesche.Models.EquipmentModel.Equipment>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -105,7 +110,7 @@ using Elesche.Models.TeacherModel;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(492, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea622f09355d445b9a311d0b6db6033d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31bd8fe2d0d04d8d889677c276e7dfc6", async() => {
                 BeginContext(538, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -140,7 +145,7 @@ using Elesche.Models.TeacherModel;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(554, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "271fb735d4b5431ebffc47ec2de82519", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af8a0c72ffbe43e9999225283529985a", async() => {
                 BeginContext(607, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

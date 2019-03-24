@@ -33,8 +33,13 @@ using Elesche.Models.TeacherModel;
 
 #line default
 #line hidden
+#line 5 "E:\Asp.Net.MVC\Elesche\Elesche\Views\_ViewImports.cshtml"
+using Elesche.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"674278cb0e9dbd3d7655c141cc0b39bf50c8128f", @"/Views/Teacher/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abdd123b3ba1d857bc0ade27744e95f5421a8026", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"35a91de7833b0b5dda87909e5137bf8b936879e1", @"/Views/_ViewImports.cshtml")]
     public class Views_Teacher_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Teacher>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "School", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -160,7 +165,7 @@ using Elesche.Models.TeacherModel;
             WriteLiteral("<div class=\"text-center\">\r\n    <div class=\"btn btn-info\">\r\n        ");
             EndContext();
             BeginContext(655, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dc169ac0f3d4c9a908ea128655c1dd8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92a141b40c10439aafe7bdc5cf136399", async() => {
                 BeginContext(736, 15, true);
                 WriteLiteral("Back to Details");
                 EndContext();

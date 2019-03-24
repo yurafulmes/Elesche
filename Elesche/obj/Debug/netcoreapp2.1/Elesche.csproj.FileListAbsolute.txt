@@ -40,3 +40,6 @@ E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Elesche.csprojAssemblyRef
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Equipment\Details.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\List.g.cshtml.cs
 E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\Create.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\Details.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\Delete.g.cshtml.cs
+E:\Asp.Net.MVC\Elesche\Elesche\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\EditorTemplates\SubjectSelectViewModel.g.cshtml.cs

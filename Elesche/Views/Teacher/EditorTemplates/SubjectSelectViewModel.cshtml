@@ -1,0 +1,7 @@
+﻿@model SubjectSelectViewModel
+
+@Html.HiddenFor(model => model.Subject.Id)
+@Html.HiddenFor(model => model.Subject.Name)
+
+@Html.LabelFor(model => model.IsSelected, Model.Subject.Name)
+@Html.EditorFor(model => model.IsSelected)

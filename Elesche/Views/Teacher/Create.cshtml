@@ -1,5 +1,4 @@
-﻿@model Elesche.Models.TeacherModel.Teacher
-
+﻿@model TeacherCreateViewModel
 <h4>Teacher</h4>
 <hr />
 <div class="row">
@@ -7,24 +6,26 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <label asp-for="Teacher.FirstName" class="control-label"></label>
+                <input asp-for="Teacher.FirstName" class="form-control" />
+                <span asp-validation-for="Teacher.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <label asp-for="Teacher.LastName" class="control-label"></label>
+                <input asp-for="Teacher.LastName" class="form-control" />
+                <span asp-validation-for="Teacher.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Patronymic" class="control-label"></label>
-                <input asp-for="Patronymic" class="form-control" />
-                <span asp-validation-for="Patronymic" class="text-danger"></span>
+                <label asp-for="Teacher.Patronymic" class="control-label"></label>
+                <input asp-for="Teacher.Patronymic" class="form-control" />
+                <span asp-validation-for="Teacher.Patronymic" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SchoolId" class="control-label"></label>
-                <select asp-for="SchoolId" class ="form-control" asp-items="ViewBag.School"></select>
+                <label asp-for="Teacher.SchoolId" class="control-label"></label>
+                <select asp-for="Teacher.SchoolId" class="form-control" asp-items="@Model.Schools"></select>
             </div>
+            @Html.EditorFor(model => model.Subjects)
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -33,6 +34,6 @@
 </div>
 
 <div>
-    <a asp-action="List" asp-route-id="@ViewBag.SchoolId">Back to List</a>
+    <a asp-action="List" asp-route-id="@Model.SchoolId">Back to List</a>
 </div>
 

@@ -88,19 +88,11 @@ namespace Elesche.Migrations
 
                     b.Property<int>("Semester");
 
-                    b.Property<int?>("SubjectId");
-
-                    b.Property<int?>("TeacherId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("EquipmentId");
 
                     b.HasIndex("SchoolId");
-
-                    b.HasIndex("SubjectId");
-
-                    b.HasIndex("TeacherId");
 
                     b.ToTable("Subjects");
                 });
@@ -129,12 +121,12 @@ namespace Elesche.Migrations
             modelBuilder.Entity("Elesche.Models.Database.TeacherSubject", b =>
                 {
                     b.HasOne("Elesche.Models.SubjectModel.Subject", "Subject")
-                        .WithMany()
+                        .WithMany("TeacherSubjects")
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Elesche.Models.TeacherModel.Teacher", "Teacher")
-                        .WithMany()
+                        .WithMany("TeacherSubjects")
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -157,20 +149,12 @@ namespace Elesche.Migrations
                         .WithMany("Subjects")
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Elesche.Models.SubjectModel.Subject")
-                        .WithMany("Teachers")
-                        .HasForeignKey("SubjectId");
-
-                    b.HasOne("Elesche.Models.TeacherModel.Teacher")
-                        .WithMany("Subjects")
-                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("Elesche.Models.TeacherModel.Teacher", b =>
                 {
                     b.HasOne("Elesche.Models.SchoolModel.School", "School")
-                        .WithMany()
+                        .WithMany("Teachers")
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
