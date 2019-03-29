@@ -14,6 +14,7 @@ using Elesche.Models.Database;
 using Elesche.Models.SchoolModel;
 using Elesche.Models.SubjectModel;
 using Elesche.Models.TeacherModel;
+using Elesche.Models.AudienceModel;
 
 namespace Elesche
 {
@@ -39,6 +40,7 @@ namespace Elesche
             services.AddScoped<IGenericRepository<Subject>, GenericRepository<Subject>>();
             services.AddScoped<IGenericRepository<Teacher>, GenericRepository<Teacher>>();
             services.AddScoped<IGenericRepository<TeacherSubject>, GenericRepository<TeacherSubject>>();
+            services.AddScoped<IGenericRepository<Audience>, GenericRepository<Audience>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

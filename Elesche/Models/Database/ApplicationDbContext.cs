@@ -1,4 +1,5 @@
-﻿using Elesche.Models.Database;
+﻿using Elesche.Models.AudienceModel;
+using Elesche.Models.Database;
 using Elesche.Models.EquipmentModel;
 using Elesche.Models.SchoolModel;
 using Elesche.Models.SubjectModel;
@@ -22,6 +23,7 @@ namespace Elesche.Models
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherSubject> TeacherSubjects { get; set; }
+        public DbSet<Audience> Audiences { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             //Configuration.LazyLoadingEnabled = false;
